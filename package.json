@@ -1,0 +1,24 @@
+{
+  "name": "herethings",
+  "version": "0.1.0",
+  "description": "A set of online tools for quickly uploading sketches, webcam snaps, voice recordings, and more",
+  "scripts": {
+    "compile": "",
+    "watch": "",
+    "start": ""
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Paraknight/herethings.git"
+  },
+  "author": "Yousef Amar <yousef@amar.io> (http://yousefamar.com/)",
+  "contributors": [
+    "Yousef Amar <yousef@amar.io> (http://yousefamar.com/)",
+    "Philipp Lenssen <philipp.lenssen@gmail.com>",
+    "Scott Lowe <bgsosh@gmail.com>"
+  ],
+  "bugs": {
+    "url": "https://github.com/Paraknight/herethings/issues"
+  },
+  "homepage": "https://github.com/Paraknight/herethings#readme"
+}
