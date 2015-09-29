@@ -8,10 +8,6 @@ html
 			canvas#contentBox(width='600', height='600')
 			#contentBoxInner sketch here
 			#contentBoxOverlay
-			.doneButton
-			.doneButtonFootnote
-				span.smiley
-				span.showsText shows for 3 days
-				span.moreExpander(onclick="$('#serviceContent').fadeToggle(140)")
+			include ../common/templates/footer.jade
 			include ../common/templates/services.jade
 		#linkPointer
