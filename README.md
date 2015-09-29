@@ -24,4 +24,5 @@ Once the server is running, navigate to `localhost:9980/things` to test.
 
  - All services are served by the same web server, like the original PHP, but this will probably change, since right now if the server goes down, all services do.
  - The app will detect if it's being accessed locally, and if so, all links to other services will look like `localhost:[PORT]/[SERVICE]`, otherwise `here[SERVICE].com`.
+ - All resources automatically have a content hash appended to their URL for cache busting.
  - The plan is at [doc/plan.md](doc/plan.md); please edit there.
