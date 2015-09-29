@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type', content='text/html; CHARSET=UTF-8')
+		title HereCast
+	body.cast
+		.content
+			canvas#contentBox(width='600', height='600')
+			#contentBoxInner
+			#contentBoxInner2 start mic recording, then sketch here
+			#recordButton(onclick='castApp.toggleRecording()')
+			#contentBoxOverlay
+			include ../common/templates/footer.jade
+			include ../common/templates/services.jade
