@@ -38,7 +38,8 @@ module.exports = {
 			{ test: /\.jade$/, loader: 'jade' },
 			//{ test: /\.styl$/, loader: 'style!css!stylus' },
 			{ test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!stylus-loader?resolve url') },
-			{ test: /\.png$/, loader: 'file?name=image/[name]-[hash].[ext]' }
+			{ test: /\.png$/, loader: 'file?name=image/[name].[ext]?[hash]' },
+			{ test: /\.wav$/, loader: 'file?name=sound/[name].[ext]?[hash]' }
 		]
 	},
 	debug: true,

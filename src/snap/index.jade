@@ -1,0 +1,25 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type', content='text/html; CHARSET=UTF-8')
+		title HereSnap
+	body.snap
+		.content
+			//
+				if mobile
+				<input type="file" accept="image/*" id="contentBox"/>
+			video#contentBox(autoplay='')
+			canvas#canvas(width='600', height='600')
+			img#snapshot(src='', alt='')
+			#snapButton(onclick='snapApp.snapPhoto()')
+			#countdown 8
+			#closeButton(onclick='javascript:snapApp.clearPhoto()')
+			#snapOverlay
+			#contentBoxOverlay
+			.doneButton
+			.doneButtonFootnote
+				span.smiley
+				span.showsText shows for 3 days
+				span.moreExpander(onclick="$('#serviceContent').fadeToggle(140)")
+			include ../common/templates/services.jade
+		#linkPointer
