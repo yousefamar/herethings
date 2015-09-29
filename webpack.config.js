@@ -2,9 +2,21 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require("extract-text-webpack-plugin");
 
+function buildPage(service) {
+	return {
+		inject: 'body',
+		chunks: ['common', service],
+		hash: true,
+		favicon: 'src/common/favicon.ico',
+		template: 'src/' + service + '/index.jade',
+		filename: service + '/index.html'
+	}
+}
+
 module.exports = {
 	entry: {
 		things: './src/things/index.ls',
+		sketch: './src/sketch/index.ls',
 	},
 	resolve: {
 		root: __dirname + '/src'
@@ -26,15 +38,9 @@ module.exports = {
 	devtool: 'source-map',
 	plugins: [
 		new ExtractTextPlugin('[name].min.css'),
-		new HtmlWebpackPlugin({
-			inject: 'body',
-			hash: true,
-			favicon: 'src/common/favicon.ico',
-			title: 'HereThings',
-			template: 'src/things/index.jade',
-			filename: 'things/index.html'
-		}),
-		new webpack.optimize.CommonsChunkPlugin('common.min.js'),
+		new HtmlWebpackPlugin(buildPage('things')),
+		new HtmlWebpackPlugin(buildPage('sketch')),
+		//new webpack.optimize.CommonsChunkPlugin('common.min.js'),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
 				warnings: false

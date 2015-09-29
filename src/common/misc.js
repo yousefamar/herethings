@@ -92,7 +92,7 @@ var __slice = Array.prototype.slice;
     };
 
     Sketch.prototype.startPainting = function() {
-      if (!g_contentBoxInnerRemoved) { $('#contentBoxInner').fadeOut('fast'); g_contentBoxInnerRemoved = true; }
+      if (!window.g_contentBoxInnerRemoved) { $('#contentBoxInner').fadeOut('fast'); window.g_contentBoxInnerRemoved = true; }
       this.painting = true;
       return this.action = {
         tool: this.tool,
