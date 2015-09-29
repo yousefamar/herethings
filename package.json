@@ -1,6 +1,6 @@
 {
   "name": "herethings",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A set of online tools for quickly uploading sketches, webcam snaps, voice recordings, and more",
   "scripts": {
     "compile": "lsc -co build src/server.ls & webpack --progress --colors & wait",
