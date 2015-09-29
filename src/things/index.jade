@@ -5,31 +5,4 @@ html
 		title HereThings
 	body.home
 		.content
-			#serviceContent
-				.close(onclick="javascript:$('#serviceContent').fadeToggle(140)")
-				.services
-					a.icon.sketchIcon(title='Draw a sketch') HereSketch
-					a.icon.snapIcon(title='Snap a pic with your webcam') HereSnap
-					a.icon.clipIcon(title='Record a 10 seconds video with your webcam') HereClip
-					a.icon.voiceIcon(title='Record up to 1 minute of speech') HereVoice
-					a.icon.castIcon(title='Sketch up to 1 minute while recording your voice') HereCast
-				p.shareInfo
-					strong
-						a.hereThingsLink(href='http://herething.com') HereThings
-					|  can be shared anywhere &ndash;
-					|     like in comments, posts, messages, mails &ndash; with a simple link,
-					|     and nicely disappear after 3 days. 
-					span.terms
-						| (
-						a(href="javascript:$('#termsDetail').slideToggle()") info &amp; terms
-						| )
-					| .
-				p#termsDetail
-					| We try our best to make this be useful to you!
-					| Things created will be publicly available for approximately 3 days under a near-impossible-for-most to guess
-					| unlisted URL you can share anywhere you like. You give us the non-exclusive right to distribute the content in any way and form,
-					| and promise to only share your own content and not illegal/ trolling/ adult content.
-					| Two quotation marks &quot;walk into&quot; a bar. Thanks for using HereThings and let us know if there&apos;s anything!
-					br
-					| &ndash; Scott &amp; Philipp,
-					a(href='mailto:info@herethings.com') info@herethings.com
+			include ../common/templates/services.jade

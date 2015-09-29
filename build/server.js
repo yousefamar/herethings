@@ -5,7 +5,7 @@
   x$ = express();
   x$.use(express['static']('build'));
   x$.use(function(req, res){
-    res.sendFile('build/index.html', {
+    res.sendFile('build/things/index.html', {
       root: './'
     });
   });
