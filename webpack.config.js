@@ -6,7 +6,8 @@ var services = [
 	'things',
 	'sketch',
 	'snap',
-	'clip'
+	'clip',
+	'voice'
 ];
 
 var entry = {};

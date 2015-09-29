@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type', content='text/html; CHARSET=UTF-8')
+		title HereClip
+	body.voice
+		.content
+			//
+				what to do if mobile? following doesn't work
+				<input type="file" accept="audio/*" id="contentBox"/>
+			video#contentBox(autoplay='')
+			// controls="controls"
+			#recordButton(onclick='voiceApp.toggleRecording()')
+			#contentBoxInner
+			#contentBoxOverlay
+			.doneButton
+			.doneButtonFootnote
+				span.smiley
+				span.showsText shows for 3 days
+				span.moreExpander(onclick="$('#serviceContent').fadeToggle(140)")
+			include ../common/templates/footer.jade
+			include ../common/templates/services.jade
