@@ -1,0 +1,381 @@
+body
+  margin 0
+  background-color #fff
+  color #000
+  font-family arial, helvetica, sans-serif
+
+.logo
+  width 380px
+
+a
+  color rgb(51,108,139)
+
+.hereSketch a.hereSketchLink,
+.hereSnap a.hereSnapLink,
+.hereClip a.hereClipLink,
+.hereVoice a.hereVoiceLink,
+.hereWords a.hereWordsLink
+  color rgb(84,84,84)
+
+.hereLinks
+  font-weight bold
+  width 100%
+  font-size 16px
+  position relative
+  margin-left auto
+  margin-right auto
+  word-spacing 15px
+  text-align center
+  a
+    &:hover
+      opacity .8
+
+.aboutLinks
+  clear both
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  background-position -50px -88px
+  width 438px
+  height 34px
+  font-size 12px
+  position relative
+  top 13px
+  margin-left auto
+  margin-right auto
+  padding-top 7px
+  a
+    color rgb(100,100,100)
+
+.doneButton
+  display block
+  position absolute
+  top 615px
+  left 205px
+  width 190px
+  height 38px
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  background-position -138px 0
+
+.doneButtonFootnote
+  position absolute
+  left 208px
+  top 664px
+  width 184px
+  height 38px
+  font-size 12px
+  font-weight bold
+  color rgb(114,114,114)
+  text-align left
+
+#more
+  display none
+
+.content
+  width 600px
+  height 700px
+  position relative
+  margin-left auto
+  margin-right auto
+  margin-top 71px
+  text-align center
+
+#contentBox,
+#contentBoxOverlay,
+#contentBoxUnderlay,
+#contentBoxLayer,
+#wordsImageBorder
+  display block
+  position absolute
+  top 0
+  left 0
+  width 600px
+  height 600px
+  overflow hidden
+  background-color rgb(234,234,234)
+  -moz-border-radius 5px
+  border-radius 5px
+
+#contentBoxLayer
+  background-color transparent
+  border-color transparent
+
+#linkPointer
+  display none
+  position absolute
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  width 99px
+  height 62px
+  background-position -10px -5px
+  top 5px
+  left 152px
+
+.smiley
+  display block
+  float left
+  position relative
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  width 17px
+  height 17px
+  background-position -20px -81px
+  opacity .75
+
+.showsText
+  display block
+  position relative
+  float left
+  width 102px
+  height 10px
+  margin-left 5px
+  color #999
+
+.moreExpander
+  width 38px
+  height 14px
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  display block
+  background-position -361px 0
+  float right
+  opacity .6
+
+.intro
+  strong
+    font-size 150%
+
+#serviceContent
+  display none
+  position absolute
+  left -25px
+  top 170px
+  width 100%
+  padding 20px
+  height auto
+  padding 25px
+  font-weight normal
+  color rgb(30,30,30)
+  font-family tahoma
+  border 1px solid #aaa
+  -webkit-border-radius 10px
+  -moz-border-radius 10px
+  border-radius 10px
+  -moz-box-shadow 0 5px 10px rgba(0,0,0,.25)
+  -webkit-box-shadow 0 5px 10px rgba(0,0,0,.25)
+  box-shadow 0 5px 10px rgba(0,0,0,.25)
+  background-color #fff
+
+.home
+  #serviceContent
+    display block
+    border 0
+    -moz-box-shadow none
+    -webkit-box-shadow none
+    box-shadow none
+  .close
+    display none
+
+.home a.hereThingsLink,
+.home a.authenticationLink
+  text-decoration none
+
+.terms
+  color #777
+  font-size 90%
+
+#termsDetail
+  display none
+  color #777
+  font-size 15px
+  text-align justify
+  margin-left 25px
+  margin-right 25px
+
+.shareInfo
+  clear both
+  font-size 16px
+  text-align justify
+  margin-left 25px
+  margin-right 25px
+
+.shareInfo,
+.shareInfo a
+  color #777
+
+.services
+  a
+    font-weight bold
+    color rgb(46,172,223)
+    text-decoration underline
+
+.terms a,
+#termsDetail a
+  color inherit
+
+#contentBoxInner,
+#contentBoxInner2
+  position absolute
+  left 180px
+  top 280px
+  width 240px
+  font-weight bold
+  color rgb(158,158,158)
+  font-size 14px
+  text-align center
+
+#contentBoxInner2
+  position absolute
+
+input#contentBoxInner
+  margin-top 270px
+  background-color rgb(212,208,200)
+  width 250px
+  border-bottom 1px solid #666
+  border-right 1px solid #666
+  padding 0
+  font-size 110%
+  color #888
+  font-weight normal
+
+.icon
+  text-align center
+  position absolute
+  width 99px
+  height 20px
+  padding-top 104px
+  color rgb(13,76,139)
+  font-size 16px
+  font-weight bold
+  display block
+  margin-left 10px
+  margin-right 10px
+  margin-bottom 30px
+  position relative
+  text-decoration none
+  float left
+  background-image url(image/spritesheet-icons.png)
+  background-repeat no-repeat
+
+.sketchIcon
+  background-position -0 -0
+
+.snapIcon
+  background-position -100px -0
+
+.clipIcon
+  background-position -200px -0
+
+.voiceIcon
+  background-position -300px -0
+
+.chatIcon
+  background-position -0 -130px
+
+.wordsIcon
+  background-position -100px -130px
+
+.typedIcon
+  background-position -200px -130px
+
+.castIcon
+  background-position -300px -130px
+
+.sketch
+  .sketchIcon
+    background-position -0 -260px
+
+.snap
+  .snapIcon
+    background-position -100px -260px
+
+.clip
+  .clipIcon
+    background-position -200px -260px
+
+.voice
+  .voiceIcon
+    background-position -300px -260px
+
+.chat
+  .chatIcon
+    background-position -0 -390px
+
+.words
+  .wordsIcon
+    background-position -100px -390px
+
+.typed
+  .typedIcon
+    background-position -200px -390px
+
+.cast
+  .castIcon
+    background-position -300px -390px
+
+.sketch .sketchIcon,
+.snap .snapIcon,
+.clip .clipIcon,
+.voice .voiceIcon,
+.words .wordsIcon,
+.chat .chatIcon,
+.typed .typedIcon,
+.cast .castIcon
+  color rgb(217,122,122)
+
+.close
+  display block
+  position absolute
+  right 10px
+  top 10px
+  width 13px
+  height 14px
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  background-position -140px -48px
+
+#snapButton,
+#recordButton
+  display block
+  position absolute
+  top 485px
+  left 262px
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  background-position -0 -111px
+  width 76px
+  height 76px
+
+#recordButton
+  background-position -80px -111px
+
+#closeButton,
+#countdown
+  display none
+  position absolute
+  right 8px
+  top 80px
+  height 27px
+  width 27px
+
+#closeButton
+  background-image url(image/spritesheet.png)
+  background-repeat no-repeat
+  background-position -165px -45px
+
+.doneButton:hover,
+.services a:hover,
+#snapButton:hover,
+#recordButton:hover,
+#closeButton:hover,
+.moreExpander:hover
+  opacity .75
+
+#countdown
+  display none
+  font-size 14px
+  font-weight bold
+  color black
+  padding-top 60px
+  text-align center
+
