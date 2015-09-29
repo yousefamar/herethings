@@ -5,7 +5,8 @@ var ExtractTextPlugin = require("extract-text-webpack-plugin");
 var services = [
 	'things',
 	'sketch',
-	'snap'
+	'snap',
+	'clip'
 ];
 
 var entry = {};

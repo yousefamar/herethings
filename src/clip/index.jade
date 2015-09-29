@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		meta(http-equiv='Content-Type', content='text/html; CHARSET=UTF-8')
+		title HereClip
+	body.clip
+		.content
+			//
+				if mobile
+				<input type="file" accept="image/*" id="contentBox"/>
+			video#contentBox(autoplay='')
+			canvas#canvas(width='600', height='600')
+			img#snapshot(src='', alt='')
+			#recordButton(onclick='clipApp.toggleRecording()')
+			#closeButton(onclick='javascript:snapClip.clearRecording()')
+			#contentBoxOverlay
+			include ../common/templates/footer.jade
+			include ../common/templates/services.jade
