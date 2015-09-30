@@ -10,6 +10,7 @@ window.g_content-box-inner-removed = false
 
 document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
+  utils.insert-ads!
 
   window.g_local-media-stream = null
   window.g_countdown = null

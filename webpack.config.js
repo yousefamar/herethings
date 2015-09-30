@@ -30,6 +30,7 @@ module.exports = {
 	},
 	module: {
 		loaders: [
+			{ test: /\.json$/, loader: 'json' },
 			{ test: /\.ls$/, loader: 'livescript' },
 			{ test: /\.jade$/, loader: 'jade' },
 			//{ test: /\.styl$/, loader: 'style!css!stylus' },

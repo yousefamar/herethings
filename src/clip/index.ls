@@ -26,6 +26,7 @@ class ClipApp
 
 document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
+  utils.insert-ads!
 
   window.clip-app = new ClipApp!
     ..init!

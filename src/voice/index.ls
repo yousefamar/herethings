@@ -30,6 +30,7 @@ class VoiceApp
 
 document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
+  utils.insert-ads!
 
   window.voice-app = new VoiceApp!
     ..init!

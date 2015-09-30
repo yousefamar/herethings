@@ -6,5 +6,6 @@
 		"clip",
 		"voice",
 		"cast"
-	]
+	],
+	"showAds": true
 }

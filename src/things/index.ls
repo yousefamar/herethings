@@ -7,3 +7,4 @@ require! {
 
 document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
+  utils.insert-ads!

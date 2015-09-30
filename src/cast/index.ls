@@ -20,6 +20,7 @@ class CastApp
 
 document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
+  utils.insert-ads!
 
   window.cast-app = new CastApp!
     ..init!
