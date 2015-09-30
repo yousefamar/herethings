@@ -1,4 +1,4 @@
-require! [ moment, '../../services.json' ]
+require! [ moment, '../../config.json' ]
 
 gen-id = ->
   year = new Date!.get-UTC-full-year! - 2015
@@ -26,6 +26,6 @@ module.exports = handlers =
     console.log data
 
 # Quick sanity check
-for service in services
+for service in config.services
   unless service of handlers
     console.warn "WARNING: No server handler for #service service!"

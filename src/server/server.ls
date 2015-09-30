@@ -1,4 +1,4 @@
-require! [ url, express, 'body-parser', './storage', '../../services.json' ]
+require! [ url, express, 'body-parser', './storage', '../../config.json' ]
 
 express!
   ..use express.static 'build'
@@ -17,7 +17,7 @@ express!
 
   ..post '*/upload' (req, res) !->
     var service
-    for s in services
+    for s in config.services
       if ~req.url.index-of s
         service = s
         break

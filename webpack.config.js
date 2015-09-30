@@ -2,7 +2,7 @@ var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
 var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var services = require('./services.json');
+var services = require('./config.json').services;
 
 var entry = {};
 var pages = [];
