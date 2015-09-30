@@ -3,8 +3,8 @@
   "version": "0.2.0",
   "description": "A set of online tools for quickly uploading sketches, webcam snaps, voice recordings, and more",
   "scripts": {
-    "compile": "lsc -co build/server src/server/server.ls & webpack --progress --colors & wait",
-    "watch": "lsc -cwo build/server src/server/server.ls & webpack --watch --progress --colors & wait",
+    "compile": "lsc -co build/server src/server & webpack --progress --colors & wait",
+    "watch": "lsc -cwo build/server src/server & webpack --watch --progress --colors & wait",
     "start": "node build/server/server.js",
     "clean": "rm -rf build/*"
   },
@@ -38,6 +38,8 @@
     "webpack": "^1.12.2"
   },
   "dependencies": {
-    "express": "^4.13.3"
+    "body-parser": "^1.14.1",
+    "express": "^4.13.3",
+    "moment": "^2.10.6"
   }
 }

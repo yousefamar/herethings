@@ -1,15 +1,8 @@
 var webpack = require('webpack');
 var HtmlWebpackPlugin = require('html-webpack-plugin');
-var ExtractTextPlugin = require("extract-text-webpack-plugin");
+var ExtractTextPlugin = require('extract-text-webpack-plugin');
 
-var services = [
-	'things',
-	'sketch',
-	'snap',
-	'clip',
-	'voice',
-	'cast'
-];
+var services = require('./services.json');
 
 var entry = {};
 var pages = [];
