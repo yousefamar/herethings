@@ -1,7 +1,7 @@
 require! [ moment, '../../config.json' ]
 
 gen-id = ->
-  year = new Date!.get-UTC-full-year! - 2015
+  year = new Date!.get-UTC-full-year! - 2014
   day  = moment.utc!.format 'DDDD'
   rand = 'xxxxxx'.replace /[x]/g, -> (Math.random!*36.|.0).to-string 36
   "#year#day#rand"

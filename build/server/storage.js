@@ -5,7 +5,7 @@
   config = require('../../config.json');
   genId = function(){
     var year, day, rand;
-    year = new Date().getUTCFullYear() - 2015;
+    year = new Date().getUTCFullYear() - 2014;
     day = moment.utc().format('DDDD');
     rand = 'xxxxxx'.replace(/[x]/g, function(){
       return (Math.random() * 36 | 0).toString(36);
