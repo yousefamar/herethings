@@ -3,12 +3,8 @@
 ## Installation
 
  1. `git clone` this repo and `cd` into it
- 2. `npm install --production`
-
-If you want to compile from scratch:
-
- 1. Same as above but `npm install`
- 2. `npm run compile`
+ 2. `npm install`
+ 3. `npm run compile`
 
 During dev, build automatically on file write with `npm run watch`. Delete build with `npm run clean` for convenience.
 
