@@ -13,26 +13,28 @@ export apply-service-links = !->
         nav-to-service service
 
 export insert-ads = !->
-  return unless config.show-ads
+  unless config.show-ads
+    # TODO: Un-hackify all absolute positioning stuff
+    $ \.bottomAdFootnote .css \top \615px
+    return
 
   document.create-element \script
     ..async = true
     ..src = '//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js'
     document.body.append-child ..
 
-  ad-div = document.create-element \div
-    ..style.text-align = \center
-    document.body.append-child ..
-
-  document.create-element \ins
-    ..class-name = \adsbygoogle
-    ..style
-      ..display = \inline-block
-      ..width   = \468px
-      ..height  = \60px
-    ..['data-ad-client'] = \ca-pub-4135663670627621
-    ..['data-ad-slot'] = \3009112240
-    ad-div.append-child ..
-
   window.adsbygoogle = window.adsbygoogle or []
     ..push {}
+
+export get-id = ->
+  id = window.location.pathname.substring 1 + window.location.pathname.last-index-of \/
+  return id if id.match /^\d{4}\w{6}$/
+
+export create-asset-URL = (path) -> config.maxCDNURL + path
+
+export on-upload-success = !->
+  window.history.replaceState {}, 'Unique URL', "#{window.location.pathname}#it"
+  alert 'Look up'
+
+export on-upload-fail = !->
+  console.error 'Fail ', it

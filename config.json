@@ -7,5 +7,6 @@
 		"voice",
 		"cast"
 	],
-	"showAds": true
+	"showAds": true,
+	"maxCDNURL": ""
 }

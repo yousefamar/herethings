@@ -1,4 +1,4 @@
-require! [ moment, '../../config.json' ]
+require! [ fs, mkdirp, moment, '../../config.json' ]
 
 gen-id = ->
   year = new Date!.get-UTC-full-year! - 2014
@@ -6,24 +6,40 @@ gen-id = ->
   rand = 'xxxxxx'.replace /[x]/g, -> (Math.random!*36.|.0).to-string 36
   "#year#day#rand"
 
+save-image = (path, id, data-URL, callback) !->
+  data-URL .= replace /^data:image\/png;base64,/ ''
+  err <-! mkdirp "build/#path"
+  return if err?
+  fs.write-file "build/#path/#id.png", data-URL, \base64, callback
+
 module.exports = handlers =
-  things: (data) ->
+  things: (data, callback) ->
     console.log data
+    callback!
 
-  sketch: (data) ->
-    console.log data
+  sketch: (data, callback) ->
+    id = gen-id!
+    err <-! save-image 'sketch/uploads', id, data.img
+    if err?
+      callback!
+      return
+    callback id
 
-  snap: (data) ->
+  snap: (data, callback) ->
     console.log data
+    callback!
 
-  clip: (data) ->
+  clip: (data, callback) ->
     console.log data
+    callback!
 
-  voice: (data) ->
+  voice: (data, callback) ->
     console.log data
+    callback!
 
-  cast: (data) ->
+  cast: (data, callback) ->
     console.log data
+    callback!
 
 # Quick sanity check
 for service in config.services
