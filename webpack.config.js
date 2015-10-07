@@ -22,7 +22,10 @@ services.map(function (service) {
 module.exports = {
 	entry: entry,
 	resolve: {
-		root: __dirname + '/src'
+		root: __dirname + '/src',
+		alias: {
+			config: __dirname + '/config.json'
+		}
 	},
 	output: {
 		path: __dirname + '/build',

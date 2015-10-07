@@ -1,4 +1,4 @@
-require! '../../config.json'
+require! config
 
 nav-to-service = (service) ->
   if window.location.hostname is \localhost
