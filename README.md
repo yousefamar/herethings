@@ -6,7 +6,7 @@
  2. `npm install`
  3. `npm run compile`
 
-During dev, build automatically on file write with `npm run watch`. Delete build with `npm run clean` for convenience.
+During dev, build automatically on file write with `npm run watch` (or `npm run watch-win` on windows). Delete build with `npm run clean` for convenience.
 
 ## Usage
 
