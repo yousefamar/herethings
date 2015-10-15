@@ -13,7 +13,7 @@ express!
     err <-! res.send-file "#pathname/index.html", root: './build/'
     next! if err
 
-  ..use body-parser.urlencoded extended: false
+  ..use body-parser.urlencoded limit: \50mb extended: false
 
   ..post '*/upload' (req, res) !->
     var service

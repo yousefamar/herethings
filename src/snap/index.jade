@@ -5,17 +5,6 @@ html
 		title HereSnap
 	body.snap
 		.content
-			//
-				if mobile
-				<input type="file" accept="image/*" id="contentBox"/>
-			video#contentBox(autoplay='')
-			canvas#canvas(width='600', height='600')
-			img#snapshot(src='', alt='')
-			#snapButton(onclick='snapApp.snapPhoto()')
-			#countdown 8
-			#closeButton(onclick='javascript:snapApp.clearPhoto()')
-			#snapOverlay
-			#contentBoxOverlay
-			include ../common/includes/done-footer.jade
+			#content-inner
 			include ../common/includes/services.jade
 		#linkPointer

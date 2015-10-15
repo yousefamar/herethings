@@ -26,8 +26,12 @@ module.exports = handlers =
     callback id
 
   snap: (data, callback) ->
-    console.log data
-    callback!
+    id = gen-id!
+    err <-! save-image 'snap/uploads', id, data.img
+    if err?
+      callback!
+      return
+    callback id
 
   clip: (data, callback) ->
     console.log data
