@@ -31,6 +31,7 @@
     "imagemin": "^3.2.0",
     "jade": "^1.11.0",
     "jade-loader": "^0.7.1",
+    "jquery-ui": "^1.10.5",
     "json-loader": "^0.5.3",
     "livescript": "^1.4.0",
     "livescript-loader": "^0.1.5",

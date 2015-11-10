@@ -32,9 +32,17 @@ export get-id = ->
 
 export create-asset-URL = (path) -> config.maxCDNURL + path
 
-export on-upload-success = !->
-  window.history.replaceState {}, 'Unique URL', "#{window.location.pathname}#it"
-  alert 'Look up'
+export on-upload-success = do ->
+  require! 'jquery-ui/effect-shake'
+  require! 'common/includes/waggle.jade'
+  !->
+    window.history.replaceState {}, 'Unique URL', "#{window.location.pathname}#it"
+    $ waggle!
+      $ \body .append ..
+      ..fade-in  \fast
+      ..effect   \shake direction: \up times: 20 distance: 15
+      , 20000
+      ..fade-out \fast
 
 export on-upload-fail = !->
   console.error 'Fail ', it

@@ -42,8 +42,11 @@ module.exports = {
 			{ test: /\.wav$/, loader: 'file?name=sound/[name].[ext]?[hash]' }
 		]
 	},
-	debug: true,
-	devtool: 'source-map',
+	externals: {
+		jquery: "jQuery"
+	},
+	//debug: true,
+	//devtool: 'source-map',
 	plugins: [
 		new ExtractTextPlugin('[name].min.css'),
 		//new webpack.optimize.CommonsChunkPlugin('common.min.js'),
@@ -51,7 +54,7 @@ module.exports = {
 			compress: {
 				warnings: false
 			},
-			sourceMap: true,
+			//sourceMap: true,
 			mangle: false
 		})
 	].concat(pages)
