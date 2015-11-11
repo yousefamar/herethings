@@ -29,6 +29,7 @@ module.exports = {
 	},
 	output: {
 		path: __dirname + '/build',
+		publicPath: '/',
 		filename: '[name]/[name].min.js'
 	},
 	module: {
@@ -38,8 +39,8 @@ module.exports = {
 			{ test: /\.jade$/, loader: 'jade' },
 			//{ test: /\.styl$/, loader: 'style!css!stylus' },
 			{ test: /\.styl$/, loader: ExtractTextPlugin.extract('style-loader', 'css-loader?sourceMap!stylus-loader?resolve url') },
-			{ test: /\.png$/, loader: 'file?name=image/[name].[ext]?[hash]' },
-			{ test: /\.wav$/, loader: 'file?name=sound/[name].[ext]?[hash]' }
+			{ test: /\.png$/, loader: 'file?name=res/image/[name].[ext]?[hash]' },
+			{ test: /\.wav$/, loader: 'file?name=res/sound/[name].[ext]?[hash]' }
 		]
 	},
 	externals: {
@@ -48,7 +49,7 @@ module.exports = {
 	//debug: true,
 	//devtool: 'source-map',
 	plugins: [
-		new ExtractTextPlugin('[name].min.css'),
+		new ExtractTextPlugin('[name]/[name].min.css'),
 		//new webpack.optimize.CommonsChunkPlugin('common.min.js'),
 		new webpack.optimize.UglifyJsPlugin({
 			compress: {
