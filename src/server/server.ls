@@ -18,7 +18,7 @@ express!
   ..post '*/upload' (req, res) !->
     var service
     for s in config.services
-      if ~req.url.index-of s
+      if ~req.get \host .index-of s or ~req.url.index-of s
         service = s
         break
     unless service of storage
