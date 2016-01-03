@@ -8,7 +8,7 @@ require! {
 
 window.g_content-box-inner-removed = false
 
-class CastApp
+class ShownApp
   init: !->
     $ !-> $ \#contentBox .sketch!
     $ \#contentBoxOverlay .fade-out \fast
@@ -22,5 +22,5 @@ document.add-event-listener \DOMContentLoaded !->
   utils.apply-service-links!
   utils.insert-ads!
 
-  window.cast-app = new CastApp!
+  window.shown-app = new ShownApp!
     ..init!

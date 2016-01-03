@@ -41,7 +41,7 @@ module.exports = handlers =
     console.log data
     callback!
 
-  cast: (data, callback) ->
+  shown: (data, callback) ->
     console.log data
     callback!
 

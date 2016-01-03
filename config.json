@@ -5,7 +5,7 @@
 		"snap",
 		"clip",
 		"voice",
-		"cast"
+		"shown"
 	],
 	"showAds": true,
 	"maxCDNURL": ""

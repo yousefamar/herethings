@@ -2,13 +2,13 @@ doctype html
 html
 	head
 		include ../common/includes/head.jade
-		title HereCast
-	body.cast
+		title HereShown
+	body.shown
 		.content
 			canvas#contentBox(width='600', height='600')
 			#contentBoxInner
 			#contentBoxInner2 start mic recording, then sketch here
-			#recordButton(onclick='castApp.toggleRecording()')
+			#recordButton(onclick='shownApp.toggleRecording()')
 			#contentBoxOverlay
 			include ../common/includes/done-footer.jade
 			include ../common/includes/services.jade
