@@ -12,9 +12,9 @@ During dev, build automatically on file write with `npm run watch` (or `npm run 
 
 To launch the web server, run `npm start` which is equivalent to `node build/server.js`.
 
-By default, it will run on port 9980. To change that, set the PORT enviroment variable, i.e. `PORT=8080 npm start`.
+By default, it will run on port 8080. To change that, set the PORT enviroment variable, i.e. `PORT=8081 npm start`.
 
-Once the server is running, navigate to `localhost:9980/things` to test.
+Once the server is running, navigate to `localhost:8080/things` to test.
 
 ## Notes
 
