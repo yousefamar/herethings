@@ -102,7 +102,7 @@ a
 #contentBoxUnderlay,
 #contentBoxLayer,
 #wordsImageBorder
-  display block
+  display flex
   position absolute
   top 0
   left 0
@@ -112,6 +112,13 @@ a
   background-color rgb(234,234,234)
   -moz-border-radius 5px
   border-radius 5px
+  align-items center
+
+#contentBox img,
+#contentBox video,
+  display block
+  max-width  100%
+  max-height 100%
 
 #contentBoxLayer
   background-color transparent
@@ -245,6 +252,7 @@ a
   color rgb(158,158,158)
   font-size 14px
   text-align center
+  pointer-events none
 
 #contentBoxInner2
   position absolute
@@ -368,6 +376,7 @@ input#contentBoxInner
   background-position -0 -111px
   width 76px
   height 76px
+  cursor pointer
 
 #recordButton
   background-position -80px -111px
@@ -380,6 +389,7 @@ input#contentBoxInner
   top 80px
   height 27px
   width 27px
+  cursor pointer
 
 #closeButton
   background-image url(image/spritesheet.png)

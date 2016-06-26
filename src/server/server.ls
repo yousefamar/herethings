@@ -1,38 +1,50 @@
-require! [ url, express, 'body-parser', './storage', '../../config.json' ]
+require! {
+  url
+  express
+  multiparty
+  \./storage
+  \../../config.json
+}
 
 express!
+  ..set \views \src
+  ..set 'view engine' \pug
+
   ..use express.static 'build'
 
-  ..use (req, res, next) !->
-    pathname = req.url |> url.parse |> (.pathname)
-    id = pathname.substring 1 + pathname.last-index-of \/
-    unless id.match /^\d{4}\w{6}$/
+  ..all \/:service* (req, res, next) !->
+    if req.params.service is \things or config.services.includes req.params.service
+      req.service = req.params.service
+      req.url = req.params[0] or \/
+    else if (result = req.hostname.match /here(.+).com/)?
+      req.service = result[1]
+    next!
+
+  ..get \/ (req, res, next) !->
+    unless req.service?
       next!
-      return
-    pathname .= substring 1 pathname.last-index-of \/
-    err <-! res.send-file "#pathname/index.html", root: './build/'
-    next! if err
+    else if req.service is \things
+      res.render \things/index { page: \index }
+    else
+      res.render "#{req.service}/create" { req.service, page: \create }
 
-  ..use body-parser.urlencoded limit: \50mb extended: false
-
-  ..post '*/upload' (req, res) !->
-    var service
-    for s in config.services
-      if ~req.get \host .index-of s or ~req.url.index-of s
-        service = s
-        break
-    unless service of storage
-      # Service doesn't exist yet
-      res.write-head 404
-      res.end!
+  ..get \/:id (req, res, next) !->
+    unless /^\d{4}\w{6}$/.test req.params.id
+      res.status 400 .send 'Malformed resource ID'
       return
-    id <-! storage[service] req.body
+    res.render "#{req.service}/result" { req.service, page: \result, id: req.params.id, config }
+
+  ..post \/upload (req, res) !->
+    err, fields, files <-! new multiparty.Form!.parse req
+    if err?
+      res.status 500 .send 'File upload failed'
+      return
+
+    # TODO: Check file size here and client-side
+    id <-! storage.store req.service, files
     unless id?
-      # Bad request; data not stored
-      res.write-head 400
-      res.end!
+      res.status 404 .send 'Bad request; data not stored'
       return
-    res.write-head 200
-    res.end id
+    res.send id
 
   ..listen (process.env.PORT or 8080)

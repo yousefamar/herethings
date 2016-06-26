@@ -1,0 +1,20 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereClip
+	body.voice
+		.content
+			//
+				what to do if mobile? following doesn't work
+				<input type="file" accept="audio/*" id="contentBox"/>
+			// controls="controls"
+			#content-inner
+				#contentBox(width='600', height='600')
+					audio#recording(loop)
+				#recordButton(onclick='voiceApp.toggleRecording()')
+				#contentBoxInner
+				#contentBoxOverlay
+				include ../common/includes/done-footer.pug
+			include ../common/includes/services.pug
+		#linkPointer

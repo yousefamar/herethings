@@ -1,0 +1,9 @@
+if config.showAds
+	script(async, src='//pagead2.googlesyndication.com/pagead/js/adsbygoogle.js')
+	.bottomAd
+		ins.adsbygoogle(data-ad-client='ca-pub-4135663670627621', data-ad-slot='3009112240')
+	script.
+		(window.adsbygoogle = window.adsbygoogle || []).push({});
+//- TODO: Un-hackify all absolute positioning stuff
+.bottomAdFootnote(style=config.showAds || 'top: 615px')
+	span.moreExpanderCentered(onclick="$('#serviceContent').fadeToggle(140)")

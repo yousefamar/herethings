@@ -1,0 +1,22 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereSnap
+	body.snap
+		.content
+			#content-inner
+				//
+					if mobile
+					<input type="file" accept="image/*" id="contentBox"/>
+				video#contentBox.mirrored(autoplay='')
+				canvas#canvas(width='600', height='600')
+				img#snapshot(src='', alt='')
+				#snapButton(onclick='snapApp.snapPhoto()')
+				#countdown 8
+				#closeButton(onclick='snapApp.clearPhoto()')
+				#snapOverlay
+				#contentBoxOverlay
+				include ../common/includes/done-footer.pug
+			include ../common/includes/services.pug
+		#linkPointer

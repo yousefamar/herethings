@@ -1,0 +1,17 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereClip
+	body.clip
+		.content
+			//
+				if mobile
+				<input type="file" accept="image/*" id="contentBox"/>
+			#content-inner
+				#contentBox(width='600', height='600')
+					video(autoplay, loop, controls)
+						source(type='video/webm', src='uploads/' + id + '.webm')
+				#contentBoxOverlay
+				include ../common/includes/ad-footer.pug
+			include ../common/includes/services.pug

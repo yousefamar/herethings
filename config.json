@@ -1,6 +1,5 @@
 {
 	"services": [
-		"things",
 		"sketch",
 		"snap",
 		"clip",

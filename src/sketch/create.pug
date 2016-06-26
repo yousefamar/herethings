@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereSketch
+	body.sketch
+		.content
+			#content-inner
+				canvas#contentBox(width='600', height='600')
+				#contentBoxInner sketch here
+				#contentBoxOverlay
+				include ../common/includes/done-footer.pug
+			include ../common/includes/services.pug
+		#linkPointer

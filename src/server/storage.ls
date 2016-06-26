@@ -1,4 +1,10 @@
-require! [ fs, mkdirp, moment, '../../config.json' ]
+require! [
+  fs
+  path
+  mkdirp
+  moment
+  \../../config.json
+]
 
 gen-id = ->
   year = new Date!.get-UTC-full-year! - 2014
@@ -6,46 +12,34 @@ gen-id = ->
   rand = 'xxxxxx'.replace /[x]/g, -> (Math.random!*36.|.0).to-string 36
   "#year#day#rand"
 
-save-image = (path, id, data-URL, callback) !->
-  data-URL .= replace /^data:image\/png;base64,/ ''
-  err <-! mkdirp "build/#path"
-  return if err?
-  fs.write-file "build/#path/#id.png", data-URL, \base64, callback
+copy-temp = (temp, destination, callback) !->
+  err <-! mkdirp "build/#{path.dirname destination}"
+  if err?
+    callback err
+    return
+  fs.create-read-stream temp .pipe fs.create-write-stream "build/#destination"
+  callback!
 
-module.exports = handlers =
-  things: (data, callback) ->
-    console.log data
+export store = (service, files, callback) !->
+  id = gen-id!
+  switch service
+  | \sketch
+    err <-! copy-temp files.image[0].path,  "sketch/uploads/#id.png"
+    callback unless err? then id
+  | \snap
+    err <-! copy-temp files.image[0].path,  "snap/uploads/#id.png"
+    callback unless err? then id
+  | \clip
+    err <-! copy-temp files.video[0].path,  "clip/uploads/#id.webm"
+    callback unless err? then id
+  | \voice
+    err <-! copy-temp files.audio[0].path,  "voice/uploads/#id.ogg"
+    callback unless err? then id
+  | \shown
+    # TODO: Compress manually + gzip?
+    err <-! copy-temp files.sketch[0].path, "shown/uploads/#id.json"
+    callback! if err?
+    err <-! copy-temp files.audio[0].path,  "shown/uploads/#id.ogg"
+    callback unless err? then id
+  | otherwise
     callback!
-
-  sketch: (data, callback) ->
-    id = gen-id!
-    err <-! save-image 'sketch/uploads', id, data.img
-    if err?
-      callback!
-      return
-    callback id
-
-  snap: (data, callback) ->
-    id = gen-id!
-    err <-! save-image 'snap/uploads', id, data.img
-    if err?
-      callback!
-      return
-    callback id
-
-  clip: (data, callback) ->
-    console.log data
-    callback!
-
-  voice: (data, callback) ->
-    console.log data
-    callback!
-
-  shown: (data, callback) ->
-    console.log data
-    callback!
-
-# Quick sanity check
-for service in config.services
-  unless service of handlers
-    console.warn "WARNING: No server handler for #service service!"

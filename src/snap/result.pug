@@ -1,0 +1,13 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereSnap
+	body.snap
+		.content
+			#content-inner
+				#contentBox(width='600', height='600')
+					img(src='uploads/' + id + '.png')
+				#contentBoxOverlay
+				include ../common/includes/ad-footer.pug
+			include ../common/includes/services.pug

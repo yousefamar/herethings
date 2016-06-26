@@ -1,0 +1,18 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereClip
+	body.clip
+		.content
+			#content-inner
+				//
+					if mobile
+					<input type="file" accept="image/*" id="contentBox"/>
+				video#contentBox.mirrored(autoplay, loop, muted)
+				#recordButton(onclick='clipApp.toggleRecording()')
+				#closeButton(onclick='clipApp.clearRecording()')
+				#contentBoxOverlay
+				include ../common/includes/done-footer.pug
+			include ../common/includes/services.pug
+		#linkPointer

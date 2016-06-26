@@ -1,0 +1,14 @@
+doctype html
+html
+	head
+		include ../common/includes/head.pug
+		title HereClip
+	body.voice
+		.content
+			#content-inner
+				#contentBox(width='600', height='600')
+					audio#recording(autoplay, loop, controls)
+						source(type='audio/ogg', src='uploads/' + id + '.ogg')
+				#contentBoxOverlay
+				include ../common/includes/ad-footer.pug
+			include ../common/includes/services.pug

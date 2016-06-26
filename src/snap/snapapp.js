@@ -43,7 +43,7 @@ SnapApp.prototype.snapPhoto = function() {
 		$('#canvas').hide();
 	}
 
-	var thisSound = new Audio('/' + snapSoundURL);
+	var thisSound = new Audio(snapSoundURL);
 	thisSound.play();
 	$('#closeButton').show();
 	$('#snapOverlay').show();

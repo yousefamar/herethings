@@ -10,7 +10,7 @@ During dev, build automatically on file write with `npm run watch` (or `npm run 
 
 ## Usage
 
-To launch the web server, run `npm start` which is equivalent to `node build/server.js`.
+To launch the web server, run `npm start` which is equivalent to `node build/server.js`. For debug, `nodemon` is recommended, and for production, `forever`.
 
 By default, it will run on port 8080. To change that, set the PORT enviroment variable, i.e. `PORT=8081 npm start`.
 
