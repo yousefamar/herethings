@@ -23,9 +23,24 @@ Scott, Yousef and Philipp co-own HereThings, and split all profits, at 33.33% ea
 Upcoming steps
 --------------
 
- 1. Philipp updating design to make it more fresh, simpler, minimal
- 2. Philipp handing over of files to Amar
- 3. Amar programming a workable first version, client and server. We also need to find a good server setup to prepare scaling (content distribution network, file storage)
- 4. Go live and submission to reddit.com/r/internetisbeautiful, possibly others
-    + "We've made a set of tools for you to quickly add sketches, webcam snaps, voice recordings and more in Reddit comments" - herethings.com
- 5. See if people like it.
+- [X] Philipp updating design to make it more fresh, simpler, minimal
+- [X] Philipp handing over of files to Amar
+- [X] Amar programming a workable first version, client and server.
+  - [X] Implement services
+    - [X] HereSketch
+    - [X] HereSnap
+      - [ ] Countdown?
+    - [X] HereClip
+    - [X] HereVoice
+    - [X] HereShown
+  - [ ] Fix bugs
+    - [ ] Fix Firefox client bugs
+    - [ ] Create 404 page for bad links
+    - [ ] Fix HereShown playback seek timing bugs
+    - [ ] disable done button
+  - [ ] Clean up, restructure, refactor
+  - [ ] Prepare scaling (content distribution network, file storage)
+  - [ ] Make sure info@herethings.com goes somewhere
+- [ ] Go live and submission to reddit.com/r/internetisbeautiful, possibly others
+    [ ] "We've made a set of tools for you to quickly add sketches, webcam snaps, voice recordings and more in Reddit comments" - herethings.com
+- [ ] See if people like it.
