@@ -12,6 +12,13 @@ express!
 
   ..use express.static 'build'
 
+  ..use (req, res, next) !->
+    if (result = req.hostname.match /here(.+).com/)?
+      req.url = \/ + result[1] + req.url
+    next!
+
+  ..use express.static 'build'
+
   ..all \/:service* (req, res, next) !->
     if req.params.service is \things or config.services.includes req.params.service
       req.service = req.params.service
